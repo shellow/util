@@ -96,3 +96,12 @@ func GetDirSize(dir string) int {
 	}
 	return -1
 }
+
+func Mv(src, dst string) error {
+	excstr := "mv " + src + " " + dst
+	_, err := CmdLinuxExc(excstr)
+	if err != nil {
+		return err
+	}
+	return nil
+}
